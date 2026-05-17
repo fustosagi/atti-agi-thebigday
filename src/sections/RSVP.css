@@ -1,0 +1,149 @@
+#rsvp {
+  background: var(--color-bg-alt);
+}
+
+/* ── Form layout ─────────────────────────────────────────────── */
+.rsvp-form {
+  max-width: 520px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--color-white);
+  border: 1px solid rgba(44 37 22 / 0.15);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  appearance: none;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(201 168 124 / 0.15);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ── Radio cards ─────────────────────────────────────────────── */
+.radio-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.radio-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(44 37 22 / 0.15);
+  border-radius: var(--radius);
+  background: var(--color-white);
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  text-align: center;
+}
+
+.radio-card input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radio-card:hover {
+  border-color: var(--color-accent);
+}
+
+.radio-card.selected {
+  border-color: var(--color-accent);
+  background: rgba(201 168 124 / 0.1);
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+/* ── Notes & footer ──────────────────────────────────────────── */
+.children-note {
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.rsvp-submit-btn {
+  width: 100%;
+  padding: 0.85rem 2rem;
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  transition: background var(--transition), opacity var(--transition);
+}
+
+.rsvp-submit-btn:hover:not(:disabled) {
+  background: var(--color-accent-dark);
+}
+
+.rsvp-submit-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Success screen ──────────────────────────────────────────── */
+.rsvp-success {
+  text-align: center;
+}
+
+.success-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.success-message {
+  max-width: 420px;
+  margin: 0 auto 2rem;
+  color: var(--color-text-light);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.rsvp-back-btn {
+  font-size: 1.4rem;
+  color: var(--color-accent-dark);
+  padding: 0.25rem 0.5rem;
+  transition: color var(--transition);
+}
+
+.rsvp-back-btn:hover {
+  color: var(--color-text);
+}
+
+@media (max-width: 400px) {
+  .radio-group {
+    grid-template-columns: 1fr;
+  }
+}
