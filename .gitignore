@@ -32,5 +32,8 @@ pnpm-debug.log*
 # Vite
 *.local
 
+# Cloudflare Wrangler
+.wrangler/
+
 # Test / coverage
 coverage/
