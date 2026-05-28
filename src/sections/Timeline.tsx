@@ -8,7 +8,6 @@ export default function Timeline() {
   return (
     <div className="section-inner">
       <h2 className="section-title">{timeline.title}</h2>
-      <p className="section-subtitle">{timeline.subtitle}</p>
 
       <ol className="timeline-list">
         {timeline.items.map((item, i) => (

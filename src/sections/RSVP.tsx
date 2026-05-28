@@ -184,8 +184,6 @@ export default function RSVP() {
           />
         </div>
 
-        <p className="children-note">{rsvp.childrenNote}</p>
-
         {error && <p className="rsvp-error">{rsvp.errorMessage}</p>}
 
         <button

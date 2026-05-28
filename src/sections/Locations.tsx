@@ -8,7 +8,6 @@ export default function Locations() {
   return (
     <div className="section-inner">
       <h2 className="section-title">{loc.title}</h2>
-      <p className="section-subtitle">{loc.subtitle}</p>
 
       <div className="locations-grid">
         <LocationCard
@@ -62,7 +61,17 @@ function LocationCard({ label, name, address, mapUrl, directionsLabel, icon }: C
         rel="noopener noreferrer"
         className="location-btn"
       >
-        {directionsLabel} →
+        {directionsLabel}
+        <svg
+          className="btn-icon"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 7a2.5 2.5 0 010 4.5z" />
+        </svg>
       </a>
     </div>
   )

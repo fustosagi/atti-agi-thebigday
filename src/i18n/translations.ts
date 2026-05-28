@@ -35,12 +35,10 @@ export interface Translation {
   };
   timeline: {
     title: string;
-    subtitle: string;
     items: TimelineItem[]; // TODO: adjust times and event names
   };
   locations: {
     title: string;
-    subtitle: string;
     ceremonyTitle: string;
     ceremonyName: string; // TODO: ceremony venue name
     ceremonyAddress: string; // TODO: ceremony address
@@ -74,7 +72,6 @@ export interface Translation {
     successTitle: string;
     successMessage: string;
     declineMessage: string;
-    childrenNote: string;
     submitting: string;
     errorMessage: string;
   };
@@ -119,7 +116,6 @@ export const translations: Record<Language, Translation> = {
     },
     timeline: {
       title: 'Schedule',
-      subtitle: 'The plan for our big day',
       items: [
         {
           time: '11:30',
@@ -141,20 +137,19 @@ export const translations: Record<Language, Translation> = {
     },
     locations: {
       title: 'Locations',
-      subtitle: 'Where to find us',
       ceremonyTitle: 'Civil Ceremony',
-      ceremonyName: 'Venue Name',
-      ceremonyAddress: '123 City Hall Street, City, Country',
-      ceremonyMapUrl: 'https://maps.google.com',
+      ceremonyName: 'Pavilion in Central Park',
+      ceremonyAddress: 'Cluj-Napoca, Central Park',
+      ceremonyMapUrl: 'https://maps.app.goo.gl/eWBNNCt8tgR3qfqv5',
       churchTitle: 'Church Ceremony',
-      churchName: 'Church Name',
-      churchAddress: '123 Church Street, City, Country',
-      churchMapUrl: 'https://maps.google.com',
-      receptionTitle: 'Reception',
-      receptionName: 'Reception Venue',
-      receptionAddress: '123 Venue Street, City, Country',
-      receptionMapUrl: 'https://maps.google.com',
-      getDirections: 'Get Directions',
+      churchName: 'St. Stephen’s Church',
+      churchAddress: 'Cluj-Napoca, Donath Street 114',
+      churchMapUrl: 'https://maps.app.goo.gl/PAXoNZxQERd7rRCn9',
+      receptionTitle: 'Wedding Party',
+      receptionName: 'Il Noce',
+      receptionAddress: 'Săvădisla, Main Street 21',
+      receptionMapUrl: 'https://maps.app.goo.gl/UhoYa6kmyyuhDxuG7',
+      getDirections: 'View Map',
     },
     rsvp: {
       title: 'RSVP',
@@ -175,7 +170,6 @@ export const translations: Record<Language, Translation> = {
       successTitle: 'Thank you!',
       successMessage: 'Your RSVP has been received. We cannot wait to celebrate with you!',
       declineMessage: 'We are sorry you cannot make it. Thank you for letting us know.',
-      childrenNote: 'Please note: the ceremony and reception are kindly adults only.',
       submitting: 'Sending…',
       errorMessage: 'Something went wrong. Please try again or contact us directly.',
     },
@@ -219,7 +213,6 @@ export const translations: Record<Language, Translation> = {
     },
     timeline: {
       title: 'Program',
-      subtitle: 'Az esküvői nap menete',
       items: [
         { time: '11:30', title: 'Polgári esküvő', description: 'Kimondják a fogadalmukat a szeretteik jelenlétében.' },
         {
@@ -233,20 +226,19 @@ export const translations: Record<Language, Translation> = {
     },
     locations: {
       title: 'Helyszínek',
-      subtitle: 'Hol találjátok a párt',
       ceremonyTitle: 'Polgári esküvő',
-      ceremonyName: 'Helyszín neve',
-      ceremonyAddress: 'Utca neve 123, Város, Ország',
-      ceremonyMapUrl: 'https://maps.google.com',
+      ceremonyName: 'Sétatéri pavilon',
+      ceremonyAddress: 'Kolozsvár, Sétatér',
+      ceremonyMapUrl: 'https://maps.app.goo.gl/eWBNNCt8tgR3qfqv5',
       churchTitle: 'Egyházi szertartás',
-      churchName: 'Templom neve',
-      churchAddress: 'Utca neve 456, Város, Ország',
-      churchMapUrl: 'https://maps.google.com',
+      churchName: 'Szent István templom',
+      churchAddress: 'Kolozsvár, Donát út 114',
+      churchMapUrl: 'https://maps.app.goo.gl/PAXoNZxQERd7rRCn9',
       receptionTitle: 'Lakodalom',
-      receptionName: 'A fogadás helyszíne',
-      receptionAddress: 'Utca neve 789, Város, Ország',
-      receptionMapUrl: 'https://maps.google.com',
-      getDirections: 'Útvonaltervezés',
+      receptionName: 'Il Noce',
+      receptionAddress: 'Tordaszentlászló, Fő út 21',
+      receptionMapUrl: 'https://maps.app.goo.gl/UhoYa6kmyyuhDxuG7',
+      getDirections: 'Térkép',
     },
     rsvp: {
       title: 'Visszajelzés',
@@ -267,7 +259,6 @@ export const translations: Record<Language, Translation> = {
       successTitle: 'Köszönjük!',
       successMessage: 'A visszajelzésedet megkaptuk. Alig várjuk, hogy együtt ünnepeljünk!',
       declineMessage: 'Sajnáljuk, hogy nem tudsz eljönni. Köszönjük, hogy jelezted.',
-      childrenNote: 'Megjegyzés: az ünnepség csak felnőtteknek szól.',
       submitting: 'Küldés…',
       errorMessage: 'Hiba történt. Kérjük, próbáld újra, vagy lépj kapcsolatba velünk.',
     },
@@ -311,7 +302,6 @@ export const translations: Record<Language, Translation> = {
     },
     timeline: {
       title: 'Program',
-      subtitle: 'Cum va arăta ziua nunții',
       items: [
         {
           time: '11:30',
@@ -337,20 +327,19 @@ export const translations: Record<Language, Translation> = {
     },
     locations: {
       title: 'Locații',
-      subtitle: 'Unde ne găsiți',
       ceremonyTitle: 'Ceremonia civilă',
-      ceremonyName: 'Numele locației',
-      ceremonyAddress: 'Strada Exemplu 123, Oraș, Țară',
-      ceremonyMapUrl: 'https://maps.google.com',
+      ceremonyName: 'Foișorul din Parcul Central',
+      ceremonyAddress: 'Cluj-Napoca, Parcul Central',
+      ceremonyMapUrl: 'https://maps.app.goo.gl/eWBNNCt8tgR3qfqv5',
       churchTitle: 'Ceremonia religioasă',
-      churchName: 'Numele bisericii',
-      churchAddress: 'Strada Exemplu 456, Oraș, Țară',
-      churchMapUrl: 'https://maps.google.com',
-      receptionTitle: 'Recepția',
-      receptionName: 'Locația recepției',
-      receptionAddress: 'Bulevardul Exemplu 789, Oraș, Țară',
-      receptionMapUrl: 'https://maps.google.com',
-      getDirections: 'Obțineți indicații',
+      churchName: 'Biserica Sfântul Ștefan',
+      churchAddress: 'Cluj-Napoca, Strada Donath 114',
+      churchMapUrl: 'https://maps.app.goo.gl/PAXoNZxQERd7rRCn9',
+      receptionTitle: 'Nunta',
+      receptionName: 'Il Noce',
+      receptionAddress: 'Săvădisla, Strada Principală 21',
+      receptionMapUrl: 'https://maps.app.goo.gl/UhoYa6kmyyuhDxuG7',
+      getDirections: 'Hartă',
     },
     rsvp: {
       title: 'Confirmare prezență',
@@ -371,7 +360,6 @@ export const translations: Record<Language, Translation> = {
       successTitle: 'Mulțumim!',
       successMessage: 'Confirmarea a fost primită. Abia așteptăm să sărbătorim împreună cu voi!',
       declineMessage: 'Ne pare rău că nu puteți fi alături de noi. Vă mulțumim că ați anunțat.',
-      childrenNote: 'Notă: ceremonia și recepția sunt rezervate exclusiv adulților.',
       submitting: 'Se trimite…',
       errorMessage: 'Ceva nu a funcționat. Încercați din nou sau contactați-ne direct.',
     },
