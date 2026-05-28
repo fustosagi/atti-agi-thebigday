@@ -45,6 +45,10 @@ export interface Translation {
     ceremonyName: string; // TODO: ceremony venue name
     ceremonyAddress: string; // TODO: ceremony address
     ceremonyMapUrl: string; // TODO: Google Maps link
+    churchTitle: string;
+    churchName: string; // TODO: church name
+    churchAddress: string; // TODO: church address
+    churchMapUrl: string; // TODO: Google Maps link
     receptionTitle: string;
     receptionName: string; // TODO: reception venue name
     receptionAddress: string; // TODO: reception address
@@ -138,11 +142,15 @@ export const translations: Record<Language, Translation> = {
       subtitle: 'Where to find us',
       ceremonyTitle: 'Civil Ceremony',
       ceremonyName: 'Venue Name',
-      ceremonyAddress: '123 Church Street, City, Country',
+      ceremonyAddress: '123 City Hall Street, City, Country',
       ceremonyMapUrl: 'https://maps.google.com',
-      receptionTitle: 'Religious Ceremony',
-      receptionName: 'Venue Name',
-      receptionAddress: '123 Church Street, City, Country',
+      churchTitle: 'Church Ceremony',
+      churchName: 'Church Name',
+      churchAddress: '123 Church Street, City, Country',
+      churchMapUrl: 'https://maps.google.com',
+      receptionTitle: 'Reception',
+      receptionName: 'Reception Venue',
+      receptionAddress: '123 Venue Street, City, Country',
       receptionMapUrl: 'https://maps.google.com',
       getDirections: 'Get Directions',
     },
@@ -226,9 +234,13 @@ export const translations: Record<Language, Translation> = {
       ceremonyName: 'Helyszín neve',
       ceremonyAddress: 'Utca neve 123, Város, Ország',
       ceremonyMapUrl: 'https://maps.google.com',
-      receptionTitle: 'Fogadás',
+      churchTitle: 'Egyházi szertartás',
+      churchName: 'Templom neve',
+      churchAddress: 'Utca neve 456, Város, Ország',
+      churchMapUrl: 'https://maps.google.com',
+      receptionTitle: 'Lakodalom',
       receptionName: 'A fogadás helyszíne',
-      receptionAddress: 'Utca neve 456, Város, Ország',
+      receptionAddress: 'Utca neve 789, Város, Ország',
       receptionMapUrl: 'https://maps.google.com',
       getDirections: 'Útvonaltervezés',
     },
@@ -320,13 +332,17 @@ export const translations: Record<Language, Translation> = {
     locations: {
       title: 'Locații',
       subtitle: 'Unde ne găsiți',
-      ceremonyTitle: 'Ceremonia',
+      ceremonyTitle: 'Ceremonia civilă',
       ceremonyName: 'Numele locației',
       ceremonyAddress: 'Strada Exemplu 123, Oraș, Țară',
       ceremonyMapUrl: 'https://maps.google.com',
+      churchTitle: 'Ceremonia religioasă',
+      churchName: 'Numele bisericii',
+      churchAddress: 'Strada Exemplu 456, Oraș, Țară',
+      churchMapUrl: 'https://maps.google.com',
       receptionTitle: 'Recepția',
       receptionName: 'Locația recepției',
-      receptionAddress: 'Bulevardul Exemplu 456, Oraș, Țară',
+      receptionAddress: 'Bulevardul Exemplu 789, Oraș, Țară',
       receptionMapUrl: 'https://maps.google.com',
       getDirections: 'Obțineți indicații',
     },

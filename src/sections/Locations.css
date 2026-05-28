@@ -4,7 +4,7 @@
 
 .locations-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 
@@ -69,7 +69,7 @@
   text-decoration: none;
 }
 
-@media (max-width: 560px) {
+@media (max-width: 760px) {
   .locations-grid {
     grid-template-columns: 1fr;
   }

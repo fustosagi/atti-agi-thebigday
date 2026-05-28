@@ -5,18 +5,18 @@
 }
 
 :root {
-  --color-bg: #faf8f5;
-  --color-bg-alt: #f2ece3;
-  --color-accent: #c9a87c;
-  --color-accent-dark: #a6845a;
-  --color-text: #2c2516;
-  --color-text-light: #6b5b47;
-  --color-sidebar: #1e1810;
-  --color-sidebar-text: #f0e8da;
-  --color-sidebar-active: #c9a87c;
+  --color-bg: #faf8f2;
+  --color-bg-alt: #f0ebe0;
+  --color-accent: #c9a227;
+  --color-accent-dark: #b85c38;
+  --color-text: #1a1a1a;
+  --color-text-light: #4a5e4a;
+  --color-sidebar: #1e3d2f;
+  --color-sidebar-text: #faf8f2;
+  --color-sidebar-active: #c9a227;
   --color-white: #ffffff;
-  --font-heading: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Lato', Arial, sans-serif;
+  --font-heading: 'EB Garamond', Georgia, serif;
+  --font-body: 'Source Sans Pro', Arial, sans-serif;
   --sidebar-width: 240px;
   --mobile-header-height: 60px;
   --transition: 0.3s ease;

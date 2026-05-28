@@ -13,8 +13,8 @@ export default function Timeline() {
       <ol className="timeline-list">
         {timeline.items.map((item, i) => (
           <li key={i} className="timeline-item">
-            <div className="timeline-dot" aria-hidden="true" />
             <div className="timeline-time">{item.time}</div>
+            <div className="timeline-dot" aria-hidden="true" />
             <div className="timeline-body">
               <h3 className="timeline-event-title">{item.title}</h3>
               <p className="timeline-event-desc">{item.description}</p>

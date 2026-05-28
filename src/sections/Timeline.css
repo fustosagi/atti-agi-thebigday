@@ -8,11 +8,11 @@
   padding-left: 0;
 }
 
-/* Vertical line */
+/* Vertical line — centered in the dot column: time col (100px) + gap (1.25rem) + half dot (12px) */
 .timeline-list::before {
   content: '';
   position: absolute;
-  left: 100px;
+  left: calc(100px + 1.25rem + 12px);
   top: 8px;
   bottom: 8px;
   width: 1px;
@@ -38,7 +38,8 @@
   letter-spacing: 0.06em;
   color: var(--color-accent-dark);
   text-align: right;
-  padding-top: 2px;
+  /* nudge small text down so it aligns visually with the h3 cap height */
+  padding-top: 6px;
 }
 
 .timeline-dot {
@@ -46,7 +47,7 @@
   height: 10px;
   border-radius: 50%;
   background: var(--color-accent);
-  margin-top: 5px;
+  margin-top: 9px;
   justify-self: center;
   flex-shrink: 0;
 }
@@ -67,18 +68,20 @@
 
 @media (max-width: 480px) {
   .timeline-list::before {
-    left: 0;
+    left: calc(1.25rem + 12px);
   }
 
   .timeline-item {
-    grid-template-columns: 20px 1fr;
+    grid-template-columns: 24px 1fr;
     gap: 0 1rem;
   }
 
   .timeline-time {
     grid-column: 2;
+    grid-row: 1;
     text-align: left;
     font-size: 0.78rem;
+    padding-top: 0;
     margin-bottom: 0.15rem;
   }
 

@@ -17,6 +17,14 @@ export default function Locations() {
           address={loc.ceremonyAddress}
           mapUrl={loc.ceremonyMapUrl}
           directionsLabel={loc.getDirections}
+          icon="🏛️"
+        />
+        <LocationCard
+          label={loc.churchTitle}
+          name={loc.churchName}
+          address={loc.churchAddress}
+          mapUrl={loc.churchMapUrl}
+          directionsLabel={loc.getDirections}
           icon="⛪"
         />
         <LocationCard
