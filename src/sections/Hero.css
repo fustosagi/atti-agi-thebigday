@@ -25,6 +25,12 @@
   position: relative;
   z-index: 1;
   max-width: 540px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .hero-together {
@@ -32,26 +38,26 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-accent);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .hero-names {
   font-family: var(--font-heading);
-  font-size: clamp(3rem, 8vw, 5rem);
+  font-size: clamp(3rem, 7.5vw, 4.5rem);
   font-weight: 300;
   font-style: italic;
   color: var(--color-sidebar-text);
-  line-height: 1.1;
+  line-height: 1.05;
   letter-spacing: 0.02em;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .hero-invite {
   font-size: 0.88rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(240 232 218 / 0.55);
-  margin-bottom: 2rem;
+  color: rgba(255 255 255 / 0.75);
+  margin-bottom: 1.25rem;
 }
 
 .hero-divider {
@@ -59,7 +65,7 @@
   align-items: center;
   gap: 0.75rem;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .hero-divider-line {
@@ -77,16 +83,16 @@
 
 .hero-date {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 300;
   color: var(--color-sidebar-text);
-  letter-spacing: 0.1em;
-  margin-bottom: 2.5rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
 }
 
 .hero-rsvp-btn {
   display: inline-block;
-  padding: 0.75rem 2.5rem;
+  padding: 0.65rem 2rem;
   border: 1px solid var(--color-accent);
   color: var(--color-accent);
   font-size: 0.8rem;
@@ -103,13 +109,14 @@
 
 .hero-scroll {
   position: absolute;
-  bottom: 2rem;
+  bottom: 3rem;
   left: 50%;
   transform: translateX(-50%);
-  color: rgba(240 232 218 / 0.3);
+  color: rgba(255 255 255 / 0.5);
   font-size: 1.4rem;
   animation: bounce 2s ease-in-out infinite;
   transition: color var(--transition);
+  z-index: 1001;
 }
 
 .hero-scroll:hover {
@@ -117,6 +124,57 @@
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50%       { transform: translateX(-50%) translateY(6px); }
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(6px);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 1000px) {
+  .hero {
+    /* fix hero to viewport below the mobile header */
+    height: calc(100vh - var(--mobile-header-height));
+    min-height: auto;
+    padding: 2.25rem 1rem;
+  }
+
+  .hero-inner {
+    max-height: calc(100% - 5.25rem);
+    padding-bottom: 0.25rem;
+  }
+
+  .hero-names {
+    font-size: clamp(2rem, 9vw, 3rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-invite {
+    font-size: 0.72rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .hero-divider {
+    margin-bottom: 0.8rem;
+  }
+
+  .hero-date {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-rsvp-btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.75rem;
+  }
+
+  .hero-scroll {
+    bottom: calc(5.5rem + env(safe-area-inset-bottom));
+    font-size: 2rem;
+  }
 }

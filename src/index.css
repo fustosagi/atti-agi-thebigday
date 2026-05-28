@@ -1,19 +1,29 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 :root {
-  --color-bg: #faf8f2;
-  --color-bg-alt: #f0ebe0;
-  --color-accent: #c9a227;
-  --color-accent-dark: #b85c38;
-  --color-text: #1a1a1a;
-  --color-text-light: #4a5e4a;
-  --color-sidebar: #1e3d2f;
-  --color-sidebar-text: #faf8f2;
-  --color-sidebar-active: #c9a227;
+  --color-bg: #f0f8fd;
+  /* very light sky blue */
+  --color-bg-alt: #e2f1fb;
+  /* slightly deeper sky blue — no pink */
+  --color-accent: #c9921a;
+  /* warm gold — the "A" on the airship */
+  --color-accent-dark: #c05878;
+  /* dusty rose — softer take on the "Á" red */
+  --color-text: #141c38;
+  /* near-black navy — high contrast on light blue */
+  --color-text-light: #3a4a78;
+  /* dark periwinkle — clear secondary text */
+  --color-sidebar: #4a6098;
+  /* soft periwinkle — muted, pastel-adjacent */
+  --color-sidebar-text: #f0f5fc;
+  --color-sidebar-active: #c9921a;
+  /* gold */
   --color-white: #ffffff;
   --font-heading: 'EB Garamond', Georgia, serif;
   --font-body: 'Source Sans Pro', Arial, sans-serif;
@@ -96,7 +106,7 @@ a:hover {
   margin: 0.8rem 0 2.4rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .section-inner {
     padding: 3rem 1.5rem;
   }

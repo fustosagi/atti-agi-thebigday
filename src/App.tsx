@@ -53,6 +53,13 @@ export default function App() {
         />
         <main className="main-content">
           <Hero onRsvpClick={() => scrollTo('rsvp')} />
+          <div className="invitation-section">
+            <img
+              src="/assets/images/invitation.jpg"
+              alt="Wedding invitation illustration"
+              className="invitation-image"
+            />
+          </div>
           <section id="about">
             <AboutUs />
           </section>

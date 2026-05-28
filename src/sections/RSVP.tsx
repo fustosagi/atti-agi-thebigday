@@ -2,7 +2,6 @@ import { useState, useRef, useCallback, type FormEvent, type ChangeEvent } from 
 import { useLanguage } from '../i18n/LanguageContext'
 import './RSVP.css'
 
-// TODO: Replace with your deployed Google Apps Script web-app URL.
 // See the setup instructions in google-apps-script/Code.gs
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwCBXK4tAs7cyLPfW8xQmqs2uJUvx1me_bV5Uu5czDkic3aKVR93ttpDmk9qb3FhnZV/exec'
 
@@ -147,7 +146,7 @@ export default function RSVP() {
               value={form.guests}
               onChange={handleChange}
             >
-              {[1, 2, 3, 4].map((n) => (
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
                 <option key={n} value={n}>{n}</option>
               ))}
             </select>
