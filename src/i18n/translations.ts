@@ -75,6 +75,8 @@ export interface Translation {
     successMessage: string;
     declineMessage: string;
     childrenNote: string;
+    submitting: string;
+    errorMessage: string;
   };
   contact: {
     title: string;
@@ -174,6 +176,8 @@ export const translations: Record<Language, Translation> = {
       successMessage: 'Your RSVP has been received. We cannot wait to celebrate with you!',
       declineMessage: 'We are sorry you cannot make it. Thank you for letting us know.',
       childrenNote: 'Please note: the ceremony and reception are kindly adults only.',
+      submitting: 'Sending…',
+      errorMessage: 'Something went wrong. Please try again or contact us directly.',
     },
     contact: {
       title: 'Contact',
@@ -264,6 +268,8 @@ export const translations: Record<Language, Translation> = {
       successMessage: 'A visszajelzésedet megkaptuk. Alig várjuk, hogy együtt ünnepeljünk!',
       declineMessage: 'Sajnáljuk, hogy nem tudsz eljönni. Köszönjük, hogy jelezted.',
       childrenNote: 'Megjegyzés: az ünnepség csak felnőtteknek szól.',
+      submitting: 'Küldés…',
+      errorMessage: 'Hiba történt. Kérjük, próbáld újra, vagy lépj kapcsolatba velünk.',
     },
     contact: {
       title: 'Kapcsolat',
@@ -366,6 +372,8 @@ export const translations: Record<Language, Translation> = {
       successMessage: 'Confirmarea a fost primită. Abia așteptăm să sărbătorim împreună cu voi!',
       declineMessage: 'Ne pare rău că nu puteți fi alături de noi. Vă mulțumim că ați anunțat.',
       childrenNote: 'Notă: ceremonia și recepția sunt rezervate exclusiv adulților.',
+      submitting: 'Se trimite…',
+      errorMessage: 'Ceva nu a funcționat. Încercați din nou sau contactați-ne direct.',
     },
     contact: {
       title: 'Contact',

@@ -1,9 +1,10 @@
-import { useState, type FormEvent, type ChangeEvent } from 'react'
+import { useState, useRef, useCallback, type FormEvent, type ChangeEvent } from 'react'
 import { useLanguage } from '../i18n/LanguageContext'
 import './RSVP.css'
 
-// TODO: Replace with your own email address to receive RSVPs.
-const RSVP_EMAIL = 'your@email.com'
+// TODO: Replace with your deployed Google Apps Script web-app URL.
+// See the setup instructions in google-apps-script/Code.gs
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwCBXK4tAs7cyLPfW8xQmqs2uJUvx1me_bV5Uu5czDkic3aKVR93ttpDmk9qb3FhnZV/exec'
 
 interface FormState {
   name: string
@@ -27,29 +28,44 @@ export default function RSVP() {
 
   const [form, setForm] = useState<FormState>(INITIAL_FORM)
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState(false)
+  const iframeRef = useRef<HTMLIFrameElement>(null)
+  const hiddenFormRef = useRef<HTMLFormElement>(null)
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setForm((prev) => ({ ...prev, [name]: value }))
   }
 
+  // When the hidden iframe loads after form submission, treat it as success.
+  const onIframeLoad = useCallback(() => {
+    if (!submitting) return
+    setSubmitting(false)
+    setSubmitted(true)
+  }, [submitting])
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
+    setSubmitting(true)
+    setError(false)
 
-    // Build a mailto link so the RSVP lands in your inbox without a backend.
-    // For a more robust solution, replace this with a Formspree or similar fetch call.
-    const attending = form.attending === 'yes' ? rsvp.attendingYes : rsvp.attendingNo
-    const lines = [
-      `${rsvp.nameLabel}: ${form.name}`,
-      `${rsvp.attendingLabel}: ${attending}`,
-      ...(form.attending === 'yes' ? [`${rsvp.guestsLabel}: ${form.guests}`] : []),
-      ...(form.dietary.trim() ? [`${rsvp.dietaryLabel}: ${form.dietary}`] : []),
-      ...(form.note.trim() ? [`${rsvp.noteLabel}: ${form.note}`] : []),
-    ]
-    const subject = encodeURIComponent(`RSVP – ${form.name}`)
-    const body = encodeURIComponent(lines.join('\n'))
-    window.open(`mailto:${RSVP_EMAIL}?subject=${subject}&body=${body}`, '_blank')
-    setSubmitted(true)
+    const hiddenForm = hiddenFormRef.current
+    if (!hiddenForm) return
+
+    // Populate hidden form fields
+    const setField = (name: string, value: string) => {
+      const input = hiddenForm.querySelector<HTMLInputElement>(`[name="${name}"]`)
+      if (input) input.value = value
+    }
+    setField('name', form.name)
+    setField('attending', form.attending)
+    setField('guests', form.attending === 'yes' ? form.guests : '0')
+    setField('dietary', form.dietary)
+    setField('note', form.note)
+    setField('timestamp', new Date().toISOString())
+
+    hiddenForm.submit()
   }
 
   if (submitted) {
@@ -170,13 +186,38 @@ export default function RSVP() {
 
         <p className="children-note">{rsvp.childrenNote}</p>
 
+        {error && <p className="rsvp-error">{rsvp.errorMessage}</p>}
+
         <button
           type="submit"
           className="rsvp-submit-btn"
-          disabled={!form.name.trim() || !form.attending}
+          disabled={!form.name.trim() || !form.attending || submitting}
         >
-          {rsvp.submit}
+          {submitting ? rsvp.submitting : rsvp.submit}
         </button>
+      </form>
+
+      {/* Hidden iframe + form to bypass CORS (HTML form submissions are not subject to CORS) */}
+      <iframe
+        ref={iframeRef}
+        name="rsvp-iframe"
+        onLoad={onIframeLoad}
+        style={{ display: 'none' }}
+        title="rsvp-submit"
+      />
+      <form
+        ref={hiddenFormRef}
+        method="POST"
+        action={APPS_SCRIPT_URL}
+        target="rsvp-iframe"
+        style={{ display: 'none' }}
+      >
+        <input type="hidden" name="name" />
+        <input type="hidden" name="attending" />
+        <input type="hidden" name="guests" />
+        <input type="hidden" name="dietary" />
+        <input type="hidden" name="note" />
+        <input type="hidden" name="timestamp" />
       </form>
     </div>
   )
