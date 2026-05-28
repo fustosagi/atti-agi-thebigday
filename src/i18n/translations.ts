@@ -77,7 +77,6 @@ export interface Translation {
   };
   contact: {
     title: string;
-    subtitle: string;
     brideLabel: string;
     groomLabel: string;
     brideEmail: string; // TODO: bride email
@@ -99,20 +98,20 @@ export const translations: Record<Language, Translation> = {
     hero: {
       coupleNames: 'Atti & Ági',
       date: 'August 15, 2026',
-      togetherWith: 'Together with their families',
-      inviteLine: 'invite you to join their celebration',
+      togetherWith: 'Dear family and friends!',
+      inviteLine: 'We warmly invite you to our wedding to celebrate together on this big day.',
     },
     aboutUs: {
       title: 'About Us',
       bride: 'Ági',
       groom: 'Atti',
       brideText:
-        'Replace this with a short paragraph about the bride — her passions, career, or a fun fact that your guests will love.',
+        '#code #travel #sudoku #pizza',
       groomText:
-        'Replace this with a short paragraph about the groom — his passions, career, or a fun fact that your guests will love.',
+        '#frontend #boardGames #eataly #plants',
       storyTitle: 'Our Story',
       storyText:
-        'How did you two meet? This is your space to share the story behind the love — from the first glance to the moment you decided to spend forever together. Replace this placeholder with your own words.',
+        'Our story is a special one, because we have been together for over eight years and have known each other for over twenty-two years. School, university, work, traveling together, many shared experiences and adventures are behind us.',
     },
     timeline: {
       title: 'Schedule',
@@ -120,19 +119,19 @@ export const translations: Record<Language, Translation> = {
         {
           time: '11:30',
           title: 'Civil Ceremony',
-          description: 'We say our vows in the presence of family and friends.',
+          description: 'Hurry, don\'t miss it, because it won\'t last long.',
         },
         {
           time: '12:30',
           title: 'Religious Ceremony',
-          description: 'We say our vows in the presence of family and friends.',
+          description: 'Here we say the most important "yes".',
         },
         {
           time: '14:00',
           title: 'Wedding Party',
-          description: 'A sit-down dinner filled with laughter, toasts, and great food.',
+          description: 'The party starts, with good food, plenty of drinks, and lots of fun.',
         },
-        { time: '23:00', title: 'End of the Party', description: 'The party wraps up. Safe travels home!' },
+        { time: '23:00', title: 'End of the Party', description: 'The party officially ends, but the memories will last forever.' },
       ],
     },
     locations: {
@@ -155,7 +154,7 @@ export const translations: Record<Language, Translation> = {
       title: 'RSVP',
       subtitle: 'Please let us know you are coming',
       deadlineNote: 'Kindly respond by',
-      deadline: 'August 1, 2025',
+      deadline: 'July 25, 2026',
       nameLabel: 'Full name',
       namePlaceholder: 'Your full name',
       attendingLabel: 'Will you attend?',
@@ -175,7 +174,6 @@ export const translations: Record<Language, Translation> = {
     },
     contact: {
       title: 'Contact',
-      subtitle: 'Have a question? We would love to hear from you.',
       brideLabel: 'Ági',
       groomLabel: 'Atti',
       brideEmail: 'fustosagi@yahoo.com',
@@ -196,32 +194,32 @@ export const translations: Record<Language, Translation> = {
     hero: {
       coupleNames: 'Atti & Ági',
       date: '2026. augusztus 15',
-      togetherWith: 'Családjaik társaságában',
-      inviteLine: 'szeretettel meghívnak ünneplésükre',
+      togetherWith: 'Kedves családunk és barátaink!',
+      inviteLine: 'Szeretettel meghívunk az esküvőnkre, hogy együtt ünnepelhessünk ezen a nagy napon.',
     },
     aboutUs: {
       title: 'Rólunk',
       bride: 'Ági',
       groom: 'Atti',
       brideText:
-        'Cseréld le ezt a szöveget egy rövid bemutatkozóra a menyasszonyról — szenvedélyeiről, munkájáról vagy egy érdekes tényről, amit a vendégek szívesen olvasnak.',
+        '#code #travel #sudoku #pizza',
       groomText:
-        'Cseréld le ezt a szöveget egy rövid bemutatkozóra a vőlegényről — szenvedélyeiről, munkájáról vagy egy érdekes tényről, amit a vendégek szívesen olvasnak.',
+        '#frontend #boardGames #eataly #plants',
       storyTitle: 'A mi történetünk',
       storyText:
-        'Hogyan találkoztatok? Ez a hely arra való, hogy elmeséljétek a szerelmetek történetét — az első pillantástól egészen addig a pillanatig, amikor eldöntöttétek, hogy örökre együtt maradtok. Cseréljétek le ezt a szöveget a saját szavaitokra.',
+        'A mi történetünk nagyon különleges, ugyanis már több mint nyolc éve alkotunk egy párt és több mint huszonkét éve ismerjük egymást. Iskola, egyetem, munkahely, közös utazások, sok-sok közös élmény és kaland van a hátunk mögött. ',
     },
     timeline: {
       title: 'Program',
       items: [
-        { time: '11:30', title: 'Polgári esküvő', description: 'Kimondják a fogadalmukat a szeretteik jelenlétében.' },
+        { time: '11:30', title: 'Polgári esküvő', description: 'Siess, le ne késd, mert nem tart sokat.' },
         {
           time: '12:30',
           title: 'Egyházi szertartás',
-          description: 'Kimondják a fogadalmukat a szeretteik jelenlétében.',
+          description: 'Itt mondjuk ki a legfontosabb igent.',
         },
-        { time: '14:00', title: 'Lakodalom', description: 'A pár elindul a házába.' },
-        { time: '23:00', title: 'A buli vége', description: 'A buli véget ér. Jó utat mindenkinek!' },
+        { time: '14:00', title: 'Lakodalom', description: 'Kezdődhet a buli, eszem-iszom dínom-dánom.' },
+        { time: '23:00', title: 'A buli vége', description: 'A buli hivatalosan véget ér, az emlékek örökre megmaradnak.' },
       ],
     },
     locations: {
@@ -244,7 +242,7 @@ export const translations: Record<Language, Translation> = {
       title: 'Visszajelzés',
       subtitle: 'Kérjük, jelezz vissza, hogy eljössz',
       deadlineNote: 'Visszajelzési határidő',
-      deadline: '2025. augusztus 1.',
+      deadline: '2026. július 25.',
       nameLabel: 'Teljes neved',
       namePlaceholder: 'Teljes neve',
       attendingLabel: 'Részt veszel az ünnepségen?',
@@ -264,7 +262,6 @@ export const translations: Record<Language, Translation> = {
     },
     contact: {
       title: 'Kapcsolat',
-      subtitle: 'Kérdésed van? Szívesen hallunk rólad.',
       brideLabel: 'Ági',
       groomLabel: 'Atti',
       brideEmail: 'fustosagi@yahoo.com',
@@ -285,20 +282,20 @@ export const translations: Record<Language, Translation> = {
     hero: {
       coupleNames: 'Atti & Ági',
       date: '15 august 2026',
-      togetherWith: 'Împreună cu familiile lor',
-      inviteLine: 'vă invită să le fiți alături',
+      togetherWith: 'Draga noastră familie și prieteni',
+      inviteLine: 'Vă invităm cu drag la nunta noastră pentru a sărbători împreună această zi specială.',
     },
     aboutUs: {
       title: 'Despre noi',
       bride: 'Ági',
       groom: 'Atti',
       brideText:
-        'Înlocuiți acest text cu o scurtă prezentare a miresei — pasiunile, cariera sau un detaliu amuzant pe care invitații vor dori să îl afle.',
+        '#code #travel #sudoku #pizza',
       groomText:
-        'Înlocuiți acest text cu o scurtă prezentare a mirelui — pasiunile, cariera sau un detaliu amuzant pe care invitații vor dori să îl afle.',
+        '#frontend #boardGames #eataly #plants',
       storyTitle: 'Povestea noastră',
       storyText:
-        'Cum v-ați cunoscut? Acesta este spațiul în care puteți spune povestea de dragoste — de la prima privire până în momentul în care ați decis să fiți împreună pentru totdeauna. Înlocuiți acest text cu propriile cuvinte.',
+        'Povestea noastră este una specială, pentru că suntem împreună de peste opt ani și ne cunoaștem de peste douăzeci și doi de ani. Școală, facultate, loc de muncă, călătorii împreună, multe experiențe și aventuri comune stau în spatele nostru.',
     },
     timeline: {
       title: 'Program',
@@ -306,22 +303,22 @@ export const translations: Record<Language, Translation> = {
         {
           time: '11:30',
           title: 'Ceremonia civilă',
-          description: 'Ne rostim jurămintele în prezența familiei și prietenilor.',
+          description: 'Grăbește-te să nu o ratezi, pentru că nu durează mult.',
         },
         {
           time: '12:30',
           title: 'Ceremonia religioasă',
-          description: 'Băuturi și aperitive în timp ce facem fotografii.',
+          description: 'Aici rostim cel mai important „da”.',
         },
         {
           time: '14:00',
           title: 'Nunta',
-          description: 'Ne rostim jurămintele în prezența familiei și prietenilor.',
+          description: 'Începe petrecerea, cu mâncare bună, băutură din belșug și multă voie bună.',
         },
         {
           time: '23:00',
           title: 'Sfârșitul party-ului',
-          description: 'Party-ul se încheie. Călătorie plăcută tuturor!',
+          description: 'Party-ul se încheie oficial, dar amintirile vor rămâne pentru totdeauna.',
         },
       ],
     },
@@ -345,7 +342,7 @@ export const translations: Record<Language, Translation> = {
       title: 'Confirmare prezență',
       subtitle: 'Vă rugăm să ne confirmați prezența',
       deadlineNote: 'Termen de confirmare',
-      deadline: '1 august 2025',
+      deadline: '25 iulie 2026',
       nameLabel: 'Numele complet',
       namePlaceholder: 'Numele dumneavoastră complet',
       attendingLabel: 'Veți participa?',
@@ -365,7 +362,6 @@ export const translations: Record<Language, Translation> = {
     },
     contact: {
       title: 'Contact',
-      subtitle: 'Aveți întrebări? Ne bucurăm să auzim de voi.',
       brideLabel: 'Ági',
       groomLabel: 'Atti',
       brideEmail: 'fustosagi@yahoo.com',

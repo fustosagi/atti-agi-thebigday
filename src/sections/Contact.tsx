@@ -9,7 +9,6 @@ export default function Contact() {
     <div className="section-inner">
       <h2 className="section-title">{contact.title}</h2>
       <div className="divider" />
-      <p className="contact-subtitle">{contact.subtitle}</p>
 
       <div className="contact-grid">
         <ContactCard
